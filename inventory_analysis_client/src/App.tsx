@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import ListShow from "./components/Analysis/List_Show";
 import ReportGen from "./components/Analysis/Report_Gen";
+import InventoryDetail from "./components/Analysis/inventory_detail";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analysis/listshow" element={<ListShow />} />
           <Route path="/analysis/reportgen" element={<ReportGen />} />
+          <Route path="//inventory/item/:record_id" element={<InventoryDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Sidebar from "../SideBar";
 import '../../assets/css/Table.css';
 
@@ -37,7 +38,6 @@ const ListShow: React.FC = () => {
           throw new Error('Network response was not ok');
         }
         
-
         const data: TableItem[] = await response.json();
         setItems(data);
         setSortedItems(data);
@@ -125,7 +125,8 @@ const ListShow: React.FC = () => {
             <tbody>
               {sortedItems.map((item) => (
                 <tr key={item.record_id}>
-                  <td>{item.date_time.toString()}</td>
+
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.date_time.toString()}</Link></td>
                   <td>{item.record_id}</td>
                 </tr>
               ))}

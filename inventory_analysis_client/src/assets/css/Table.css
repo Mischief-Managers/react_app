@@ -29,3 +29,13 @@
 .table_2 tr:hover {
   background-color: gray !important; /* Lighter gray for row hover effect */
 }
+
+.table_2 td a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent element, so it uses the default text color */
+}
+
+.table_2 td a:hover {
+  text-decoration: none; /* Keep it without underline on hover */
+  color: white; /* Optional: change color on hover */
+}
