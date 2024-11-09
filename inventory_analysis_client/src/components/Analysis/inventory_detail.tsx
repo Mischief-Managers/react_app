@@ -24,6 +24,10 @@ type Data = {
     equipment_name: string
 };
 
+type ImageData = {
+    image: string;
+};
+
 
 const flask_api_project_url = FLASK_API_URL;
 
@@ -32,6 +36,7 @@ const InventoryDetail: React.FC = () => {
     const [itemData, setItemData] = useState<Data>();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [itemImageStr, setItemImageStr] = useState<ImageData>();
 
 
     useEffect(() => {
@@ -40,10 +45,10 @@ const InventoryDetail: React.FC = () => {
         };
 
         const apiUrl = `${flask_api_project_url}/get-specific-record`;
+        const apiUrl_2 = `${flask_api_project_url}/get-specific-image`;
 
         axios.post(apiUrl, postData)
             .then((response) => {
-                console.log(response)
                 setLoading(false);
                 setItemData(response.data)
             })
@@ -52,9 +57,22 @@ const InventoryDetail: React.FC = () => {
                 setLoading(false);
             });
 
+
+        axios.post(apiUrl_2, postData)
+            .then((response) => {
+                setLoading(false);
+                setItemImageStr(response.data)
+            })
+            .catch((error) => {
+                setError(error.message);
+                setLoading(false);
+            });
+
+
     }, [record_id]);
 
 
+    console.log(itemImageStr?.image)
     return (
         <div><Sidebar />
             <div className="mainBody">
@@ -133,7 +151,7 @@ const InventoryDetail: React.FC = () => {
                     <br></br>
                     <br></br>
                     <br></br>
-                    
+
                     <h4 style={{ textAlign: 'left', marginLeft: '40px' }} >Secondary Information</h4>
 
                     <table className="table_2">
@@ -159,7 +177,17 @@ const InventoryDetail: React.FC = () => {
                     <br></br>
                     <br></br>
 
-                    <p>Image here</p>
+                    <div>
+                        <h4 style={{ textAlign: 'left', marginLeft: '40px' }}>Image </h4>
+
+                        <br></br>
+
+                        <img
+                            src={itemImageStr?.image ? `data:image/png;base64,${itemImageStr.image}` : ''}
+                            alt="Base64 representation"
+                            style={{ width: '300px', height: 'auto', textAlign: 'left', marginLeft: '40px' }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
