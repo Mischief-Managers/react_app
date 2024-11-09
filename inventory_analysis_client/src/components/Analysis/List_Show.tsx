@@ -30,14 +30,16 @@ const ListShow: React.FC = () => {
     const fetchData = async () => {
       try {
         const apiUrl = `${flask_api_project_url}/get-records`;
-        
-        console.log(apiUrl)
-        const response = await fetch(apiUrl);
+
+        const response = await fetch(apiUrl, {
+          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning' : 'skip-browser-warning' }
+        });
 
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        console.log(await response.json())
+        
+
         const data: TableItem[] = await response.json();
         setItems(data);
         setSortedItems(data);
@@ -49,7 +51,7 @@ const ListShow: React.FC = () => {
     fetchData();
   }, []);
 
- 
+
   const requestSort = (key: keyof TableItem) => {
     let direction: 'ascending' | 'descending' = 'ascending';
     if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -78,7 +80,7 @@ const ListShow: React.FC = () => {
     if (filterText) {
       sortableItems = sortableItems.filter((item) => {
         return Object.values(item)
-          .join(' ') 
+          .join(' ')
           .toLowerCase()
           .includes(filterText.toLowerCase());
       });
@@ -103,10 +105,10 @@ const ListShow: React.FC = () => {
   return (
     <div><Sidebar />
       <div className="mainBody">
-      <h5>Inventory List</h5>
+        <h5>Inventory List</h5>
         <input
           type="text"
-          placeholder="Filter by any attribute..."
+          placeholder="Search..."
           value={filterText}
           onChange={handleFilterChange}
           style={{ marginBottom: '2px', marginLeft: '-600px', marginTop: '20px', padding: '8px', width: '30%' }}

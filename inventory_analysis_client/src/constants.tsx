@@ -1,1 +1,1 @@
-export const FLASK_API_URL = "https://239e-91-194-240-2.ngrok-free.app";
+export const FLASK_API_URL = "https://dc7c-91-194-240-2.ngrok-free.app";
