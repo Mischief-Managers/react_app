@@ -7,8 +7,12 @@ import { FLASK_API_URL } from '../../constants';
 
 
 interface TableItem {
-  record_id: number;
+  record_id: string;
   date_time: Date;
+  equipment_name: string;
+  building: string;
+  high_priority: number;
+  maintenance_required: Number;
 }
 
 const flask_api_project_url = FLASK_API_URL;
@@ -19,7 +23,7 @@ const ListShow: React.FC = () => {
 
   const [sortConfig, setSortConfig] = useState<{ key: keyof TableItem; direction: 'ascending' | 'descending' }>({
     key: 'date_time',
-    direction: 'ascending',
+    direction: 'descending',
   });
 
   const [filterText, setFilterText] = useState<string>('');
@@ -119,7 +123,10 @@ const ListShow: React.FC = () => {
             <thead>
               <tr>
                 <th onClick={() => requestSort('date_time')}>Date time {getSortIcon('date_time')}</th>
-                <th onClick={() => requestSort('record_id')}>ID {getSortIcon('record_id')}</th>
+                <th onClick={() => requestSort('building')}>Date time {getSortIcon('building')}</th>
+                <th onClick={() => requestSort('equipment_name')}>Date time {getSortIcon('equipment_name')}</th>
+                <th onClick={() => requestSort('maintenance_required')}>Date time {getSortIcon('maintenance_required')}</th>
+                <th onClick={() => requestSort('high_priority')}>Date time {getSortIcon('high_priority')}</th>
               </tr>
             </thead>
             <tbody>
@@ -127,7 +134,11 @@ const ListShow: React.FC = () => {
                 <tr key={item.record_id}>
 
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.date_time.toString()}</Link></td>
-                  <td>{item.record_id}</td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.building}</Link></td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.equipment_name}</Link></td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.maintenance_required === 1 ? 'True' : 'False'}</Link></td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.high_priority === 1 ? 'True' : 'False'}</Link></td>
+                  <td></td>
                 </tr>
               ))}
             </tbody>
