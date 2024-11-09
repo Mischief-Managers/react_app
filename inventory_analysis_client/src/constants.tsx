@@ -1,2 +1,1 @@
-export const DJANGO_API_URL = "http://127.0.0.1:8000";
-export const FLASK_API_URL = "http://127.0.0.1:5100";
+export const FLASK_API_URL = "https://239e-91-194-240-2.ngrok-free.app";

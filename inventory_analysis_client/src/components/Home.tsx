@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import reactLogo from "../assets/logo/react.svg";
-import djangoLogo from "../assets/logo/django.svg";
 import flaskLogo from "../assets/logo/flask.svg";
 import dockerLogo from "../assets/logo/docker.svg";
 import awsLogo from "../assets/logo/aws.svg";

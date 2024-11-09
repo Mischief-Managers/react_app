@@ -1,0 +1,31 @@
+/* TablePage.css */
+
+.table_2 {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-top: 20px !important;
+  margin-left: 40px;
+  background-color: #000 !important; /* Black background for the entire table */
+}
+
+.table_2 th,
+.table_2 td {
+  padding: 12px !important;
+  border: 1px solid #444 !important; /* Slightly lighter border for contrast */
+  color: white !important; /* White text color for readability */
+}
+
+.table_2 th {
+  background-color: #242424 !important; /* Dark gray background for header cells */
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.table_2 tr {
+  background-color: #242424 !important; /* Darker gray for alternate rows */
+  color: white !important;
+}
+
+.table_2 tr:hover {
+  background-color: gray !important; /* Lighter gray for row hover effect */
+}
