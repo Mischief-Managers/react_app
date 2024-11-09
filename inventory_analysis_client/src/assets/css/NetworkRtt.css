@@ -1,0 +1,37 @@
+.inputNetworkRtt{
+  display: block;
+  margin-top: 40px;
+  margin-left: -20%;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  margin-left: 20%;  
+}
+
+.selectCircuitIdDropdown{
+  float: left;
+  margin-left: 20%;
+}
+
+.weButtonNetworkRTT{
+  float: center;
+  margin-left: 15%;
+  margin-top: 3%;
+}
+
+.secondLineDropdown{
+  padding-right: 3%;
+  margin-left: -1%;
+}
+
+.outputRttPredictionSection{
+  float: left;
+  display: inline-flex;
+  margin-top: 4%;
+  margin-left: 0%;
+  margin-right: 18%;
+  width: 120%;
+}

@@ -1,0 +1,28 @@
+.date-time-range-slider {
+    display: flex;
+    align-items: center;
+  }
+  
+  .date-input {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
+  
+  .range-slider {
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+  
+  .date-input label {
+    margin-bottom: 5px;
+  }
+  
+  .date-input input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+    color: white;
+  }
+  

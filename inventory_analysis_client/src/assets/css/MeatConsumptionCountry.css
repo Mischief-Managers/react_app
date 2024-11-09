@@ -1,0 +1,33 @@
+.inputSection{
+  margin-top: 80px;
+}
+
+.selectCountryDropdown{
+  float: left;
+  margin-left: 20px;
+}
+
+.selectDurationSlider{
+  float: left;
+  margin-left: 120px;
+}
+
+.mccResultButton{
+  float: left;
+  margin-left: 120px;
+}
+
+.inputSection_2{
+  float: left;
+  clear: left;
+  display:inline-flex;
+  margin-top: 2%;
+}
+
+.outputSection{
+  float: left;
+  clear: left;
+  display:inline-flex;
+  margin-top: 5%;
+  margin-left: 5%;
+}

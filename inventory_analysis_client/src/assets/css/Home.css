@@ -1,0 +1,94 @@
+#root {
+  height: 100%;
+}
+
+.mainRoot {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  width: 100wh;
+  height: 100vh;
+  overflow: hidden;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 200%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.motoLine {
+  padding: 1em;
+}
+
+.exploreButton {
+  padding: 4em;
+}
+
+.exploreButton:hover {
+  filter: drop-shadow(0 0 2em #205ed1aa);
+}
+
+.hostedBy {
+  padding: 2em;
+}
+
+.poweredByLogo {
+  padding: 0.1em;
+}
+
+.logo {
+  height: 6em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo.django:hover {
+  filter: drop-shadow(0 0 2em #1b9154aa);
+}
+
+.logo.flask:hover {
+  filter: drop-shadow(0 0 3em #737a76aa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo.docker:hover {
+  filter: drop-shadow(0 0 2em #2d9ebdaa);
+}
+
+.logo.aws:hover {
+  filter: drop-shadow(0 0 2em #f66e2baa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(1) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}

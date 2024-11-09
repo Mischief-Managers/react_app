@@ -1,0 +1,23 @@
+/* RangeSlider.css */
+
+.range-slider-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px;
+  }
+  
+  .range-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  
+  input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    margin: 0 10px;
+    text-align: center;
+  }
+

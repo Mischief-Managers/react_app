@@ -1,0 +1,36 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Compiled files
+build/
+dist/
+*.css.map
+*.js.map
+
+# Logs and testing
+logs/
+*.log
+*.log.*
+__tests__/
+
+
+# Project Specific
+temp_task.txt
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
