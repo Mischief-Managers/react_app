@@ -6,10 +6,10 @@ import { FLASK_API_URL } from '../../constants';
 
 
 interface TableItem {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
+  record_id: number;
+  equipment_name: string;
+  street_address: string;
+  age: number;
 }
 
 const flask_api_project_url = FLASK_API_URL;
@@ -19,20 +19,34 @@ const ListShow: React.FC = () => {
   const [sortedItems, setSortedItems] = useState<TableItem[]>([]);
 
   const [sortConfig, setSortConfig] = useState<{ key: keyof TableItem; direction: 'ascending' | 'descending' }>({
-    key: 'price',
+    key: 'record_id',
     direction: 'ascending',
   });
 
   const [filterText, setFilterText] = useState<string>('');
 
   useEffect(() => {
-    const fetchedItems: TableItem[] = [
-      { id: 1, name: 'Item One', description: 'This is the first item', price: 10.5 },
-      { id: 2, name: 'Item Two', description: 'This is the second item', price: 20.0 },
-      { id: 3, name: 'Item Three', description: 'This is the third item', price: 15.75 },
-    ];
-    setItems(fetchedItems);
-    setSortedItems(fetchedItems);  
+
+    const fetchData = async () => {
+      try {
+        const apiUrl = `${flask_api_project_url}/get-records`;
+        
+        console.log(apiUrl)
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        console.log(await response.json())
+        const data: TableItem[] = await response.json();
+        setItems(data);
+        setSortedItems(data);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
  
@@ -104,19 +118,19 @@ const ListShow: React.FC = () => {
           <table className="table_2">
             <thead>
               <tr>
-                <th onClick={() => requestSort('id')}>ID {getSortIcon('id')}</th>
-                <th onClick={() => requestSort('name')}>Name {getSortIcon('name')}</th>
-                <th onClick={() => requestSort('description')}>Description {getSortIcon('description')}</th>
-                <th onClick={() => requestSort('price')}>Price {getSortIcon('price')}</th>
+                <th onClick={() => requestSort('record_id')}>ID {getSortIcon('record_id')}</th>
+                <th onClick={() => requestSort('equipment_name')}>Name {getSortIcon('equipment_name')}</th>
+                <th onClick={() => requestSort('street_address')}>Description {getSortIcon('street_address')}</th>
+                <th onClick={() => requestSort('age')}>Price {getSortIcon('age')}</th>
               </tr>
             </thead>
             <tbody>
               {sortedItems.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.description}</td>
-                  <td>${item.price.toFixed(2)}</td>
+                <tr key={item.record_id}>
+                  <td>{item.record_id}</td>
+                  <td>{item.equipment_name}</td>
+                  <td>{item.street_address}</td>
+                  <td>${item.age}</td>
                 </tr>
               ))}
             </tbody>
