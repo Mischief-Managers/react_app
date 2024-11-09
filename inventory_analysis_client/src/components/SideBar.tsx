@@ -54,7 +54,13 @@ const Sidebar: any = () => {
             >
               <li>Report Generation</li>
             </Link>
-            <li></li>
+            
+            <Link
+              to="/dashboard"
+              style={{ textDecoration: "none" }}
+            >
+              <li>BIM 3D Models</li>
+            </Link>
           </ul>
         )}
 
@@ -74,7 +80,7 @@ const Sidebar: any = () => {
               to="/dashboard"
               style={{ textDecoration: "none" }}
             >
-              <li>BIM 3D Model</li>
+              <li>Conversational LLMs</li>
             </Link>
           </ul>
         )}

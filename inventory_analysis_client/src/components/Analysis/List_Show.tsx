@@ -123,16 +123,15 @@ const ListShow: React.FC = () => {
             <thead>
               <tr>
                 <th onClick={() => requestSort('date_time')}>Date time {getSortIcon('date_time')}</th>
-                <th onClick={() => requestSort('building')}>Date time {getSortIcon('building')}</th>
-                <th onClick={() => requestSort('equipment_name')}>Date time {getSortIcon('equipment_name')}</th>
-                <th onClick={() => requestSort('maintenance_required')}>Date time {getSortIcon('maintenance_required')}</th>
-                <th onClick={() => requestSort('high_priority')}>Date time {getSortIcon('high_priority')}</th>
+                <th onClick={() => requestSort('building')}>Address {getSortIcon('building')}</th>
+                <th onClick={() => requestSort('equipment_name')}>Equipment {getSortIcon('equipment_name')}</th>
+                <th onClick={() => requestSort('maintenance_required')}>Maintenance{getSortIcon('maintenance_required')}</th>
+                <th onClick={() => requestSort('high_priority')}> Priority {getSortIcon('high_priority')}</th>
               </tr>
             </thead>
             <tbody>
               {sortedItems.map((item) => (
                 <tr key={item.record_id}>
-
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.date_time.toString()}</Link></td>
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.building}</Link></td>
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.equipment_name}</Link></td>

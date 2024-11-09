@@ -155,7 +155,11 @@ const InventoryDetail: React.FC = () => {
                         </tbody>
                     </table>
 
+                    <br></br>
+                    <br></br>
+                    <br></br>
 
+                    <p>Image here</p>
                 </div>
             </div>
         </div>
