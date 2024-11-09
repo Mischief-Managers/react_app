@@ -5,6 +5,8 @@ import Dashboard from "./components/Dashboard";
 import ListShow from "./components/Analysis/List_Show";
 import ReportGen from "./components/Analysis/Report_Gen";
 import InventoryDetail from "./components/Analysis/inventory_detail";
+import Con_Llms from "./components/Analysis/Con_Llm";
+import BMI_Model from "./components/Analysis/BMI_Model";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analysis/listshow" element={<ListShow />} />
           <Route path="/analysis/reportgen" element={<ReportGen />} />
+          <Route path="/analysis/bmi_model" element={<BMI_Model />} />
+          <Route path="/analysis/conversational_llms" element={<Con_Llms />} />
           <Route path="//inventory/item/:record_id" element={<InventoryDetail />} />
         </Routes>
       </BrowserRouter>

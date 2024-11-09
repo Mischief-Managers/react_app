@@ -115,7 +115,7 @@ function Dashboard() {
             <Card.Body>
               <Card.Text style={{ color: "white" }}>BIM 3D Model</Card.Text>
               <Card.Link
-                href="/dashboard"
+                href="/analysis/bmi_model"
                 style={{
                   color: "#64DEFC",
                   textDecoration: "none",
@@ -154,7 +154,7 @@ function Dashboard() {
             <Card.Body>
               <Card.Text style={{ color: "white" }}>Conversational LLMs</Card.Text>
               <Card.Link
-                href="/dashboard"
+                href="/analysis/conversational_llms"
                 style={{
                   color: "#64DEFC",
                   textDecoration: "none",

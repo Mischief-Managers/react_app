@@ -56,7 +56,7 @@ const Sidebar: any = () => {
             </Link>
             
             <Link
-              to="/dashboard"
+              to="/analysis/bmi_model"
               style={{ textDecoration: "none" }}
             >
               <li>BIM 3D Models</li>
@@ -77,7 +77,7 @@ const Sidebar: any = () => {
 
           <ul className="sub-menu">
             <Link
-              to="/dashboard"
+              to="/analysis/conversational_llms"
               style={{ textDecoration: "none" }}
             >
               <li>Conversational LLMs</li>
