@@ -7,9 +7,7 @@ import { FLASK_API_URL } from '../../constants';
 
 interface TableItem {
   record_id: number;
-  equipment_name: string;
-  street_address: string;
-  age: number;
+  date_time: Date;
 }
 
 const flask_api_project_url = FLASK_API_URL;
@@ -19,7 +17,7 @@ const ListShow: React.FC = () => {
   const [sortedItems, setSortedItems] = useState<TableItem[]>([]);
 
   const [sortConfig, setSortConfig] = useState<{ key: keyof TableItem; direction: 'ascending' | 'descending' }>({
-    key: 'record_id',
+    key: 'date_time',
     direction: 'ascending',
   });
 
@@ -120,19 +118,15 @@ const ListShow: React.FC = () => {
           <table className="table_2">
             <thead>
               <tr>
+                <th onClick={() => requestSort('date_time')}>Date time {getSortIcon('date_time')}</th>
                 <th onClick={() => requestSort('record_id')}>ID {getSortIcon('record_id')}</th>
-                <th onClick={() => requestSort('equipment_name')}>Name {getSortIcon('equipment_name')}</th>
-                <th onClick={() => requestSort('street_address')}>Description {getSortIcon('street_address')}</th>
-                <th onClick={() => requestSort('age')}>Price {getSortIcon('age')}</th>
               </tr>
             </thead>
             <tbody>
               {sortedItems.map((item) => (
                 <tr key={item.record_id}>
+                  <td>{item.date_time.toString()}</td>
                   <td>{item.record_id}</td>
-                  <td>{item.equipment_name}</td>
-                  <td>{item.street_address}</td>
-                  <td>${item.age}</td>
                 </tr>
               ))}
             </tbody>

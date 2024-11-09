@@ -4,10 +4,10 @@ import Sidebar from "./SideBar";
 import Card from "react-bootstrap/Card";
 import "../assets/css/Dashboard.css";
 
-import meat_consumption_pie_img_1 from "../assets/photo/meat_consumption_1.png";
-import emotion_extraction_img_1 from "../assets/photo/emotion_extraction_1.png";
-import weather_img_1 from "../assets/photo/weather_1.jpg";
-import rtt_prediction_2 from "../assets/photo/rtt_prediction_2.jpg"
+import inventory_list_1 from "../assets/photo/inventory_list_1.jpg"
+import report_gen_1 from "../assets/photo/report_gen_1.jpg"
+import bim_model_1 from "../assets/photo/bim_model_1.jpg"
+import llm_1 from "../assets/photo/llm_1.jpg";
 
 
 function Dashboard() {
@@ -37,7 +37,7 @@ function Dashboard() {
           >
             <Card.Img
               variant="top"
-              src={rtt_prediction_2}
+              src={inventory_list_1}
               alt="Card Image"
               style={{ width: "100%", height: "auto" }}
             />
@@ -72,7 +72,7 @@ function Dashboard() {
           >
             <Card.Img
               variant="top"
-              src={emotion_extraction_img_1}
+              src={report_gen_1}
               alt="Card Image"
               style={{ width: "100%", height: "auto" }}
             />
@@ -107,7 +107,7 @@ function Dashboard() {
           >
             <Card.Img
               variant="top"
-              src={weather_img_1}
+              src={bim_model_1}
               alt="Card Image"
               style={{ width: "100%", height: "auto" }}
             />
@@ -146,7 +146,7 @@ function Dashboard() {
           >
             <Card.Img
               variant="top"
-              src={meat_consumption_pie_img_1}
+              src={llm_1}
               alt="Card Image"
               style={{ width: "100%", height: "auto" }}
             />
