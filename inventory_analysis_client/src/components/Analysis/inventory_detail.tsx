@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import ImageWithDot from "../Common/ImageWithDot";
+
 import { FLASK_API_URL } from '../../constants';
 
 type Attributes = {
@@ -37,6 +39,8 @@ const InventoryDetail: React.FC = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [itemImageStr, setItemImageStr] = useState<ImageData>();
+
+    const [coordinates, setCoordinates] = useState({ x: 100, y: 200 });
 
 
     useEffect(() => {
@@ -188,6 +192,26 @@ const InventoryDetail: React.FC = () => {
                             style={{ width: '300px', height: 'auto', textAlign: 'left', marginLeft: '40px' }}
                         />
                     </div>
+
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <div>
+
+                        <h4 style={{ textAlign: 'left', marginLeft: '40px' }}>BIM Model </h4>
+
+                        <br></br>
+                        <br></br>
+
+                        <div style={{ width: '10px', height: '10px', position: 'relative', textAlign: 'left', marginLeft: '40px' }}>
+                            <ImageWithDot x={coordinates.x} y={coordinates.y} />
+                        </div>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
