@@ -7,7 +7,7 @@ function Con_Llms() {
       <Sidebar />
 
       <div className="mainBody">
-        <h5>Coversational LLMs</h5>
+        <h5>Coversational LLM</h5>
 
         <p>Page is under Construction</p>
       </div>

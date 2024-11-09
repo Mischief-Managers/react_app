@@ -7,7 +7,7 @@ function BMI_Model() {
       <Sidebar />
 
       <div className="mainBody">
-        <h5>BMI 3D Models</h5>
+        <h5>BIM 3D Models</h5>
 
         <p>Page is under Construction</p>
       </div>

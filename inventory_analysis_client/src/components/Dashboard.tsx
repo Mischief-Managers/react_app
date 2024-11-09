@@ -152,7 +152,7 @@ function Dashboard() {
             />
 
             <Card.Body>
-              <Card.Text style={{ color: "white" }}>Conversational LLMs</Card.Text>
+              <Card.Text style={{ color: "white" }}>Conversational LLM</Card.Text>
               <Card.Link
                 href="/analysis/conversational_llms"
                 style={{

@@ -80,7 +80,7 @@ const Sidebar: any = () => {
               to="/analysis/conversational_llms"
               style={{ textDecoration: "none" }}
             >
-              <li>Conversational LLMs</li>
+              <li>Conversational LLM</li>
             </Link>
           </ul>
         )}
