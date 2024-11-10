@@ -63,27 +63,6 @@ const Sidebar: any = () => {
             </Link>
           </ul>
         )}
-
-        <li onClick={toggleItem_2}>
-          ML Models
-          <span
-            className={`arrow ${isItemOpen_2 ? "arrow-closed" : "arrow-open"}`}
-          >
-            &#9654;
-          </span>
-        </li>
-
-        {isItemOpen_2 && (
-
-          <ul className="sub-menu">
-            <Link
-              to="/analysis/conversational_llms"
-              style={{ textDecoration: "none" }}
-            >
-              <li>Conversational LLM</li>
-            </Link>
-          </ul>
-        )}
       </ul>
     </div>
   );
