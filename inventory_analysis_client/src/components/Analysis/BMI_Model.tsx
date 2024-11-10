@@ -3,10 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ImageWithDots_2 from "../Common/ImageWithDots_2";
 import ScrollableDropdown from "../Common/ScrollableDropdown";
 
-import axios from 'axios';
-
 import { FLASK_API_URL } from '../../constants';
-
 const flask_api_project_url = FLASK_API_URL;
 
 import "../../assets/css/BMI_Model.css";
@@ -24,11 +21,11 @@ const fetchRedDots = async (
 
   try {
     const response = await fetch(apiUrl, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      method: 'POST', 
       headers: {
-        'Content-Type': 'application/json'  // Indicates that we're sending JSON
+        'Content-Type': 'application/json' 
       },
-      body: JSON.stringify(postData)  // Convert the data object to a JSON string
+      body: JSON.stringify(postData) 
     });
 
     if (!response.ok) {
@@ -46,6 +43,7 @@ const fetchRedDots = async (
 function BMI_Model() {
 
   const buildingOption = [
+    { key: "", value: "" },
     { key: "Building 1", value: "Building 1" },
     { key: "Building 2", value: "Building 2" },
     { key: "Building 3", value: "Building 3" },
@@ -59,7 +57,7 @@ function BMI_Model() {
 
   const [selectedBuildingID, setSelectedBuildingID] = useState<
     { key: string; value: string } | undefined
-  >({ key: buildingOption[0].key, value: buildingOption[0].value });
+  >({ key: '', value: '' });
 
   const handleSelectedBuildingID = async (selectedBuildingID: {
     key: string;
@@ -67,12 +65,13 @@ function BMI_Model() {
   }) => {
     await setSelectedBuildingID(selectedBuildingID);
     const building_red_dot_api = await fetchRedDots(String(selectedBuildingID?.key));
+    const record_id = building_red_dot_api.map((item: any) => item.record_id);
     const x_dots = building_red_dot_api.map((item: any) => item.x);
     const y_dots = building_red_dot_api.map((item: any) => item.y);
     setRedDotX(x_dots);
     setRedDotY(y_dots);
 
-    const coordinates = building_red_dot_api.map((item: any) => ({ x: item.x, y: item.y }));
+    const coordinates = building_red_dot_api.map((item: any) => ({ x: item.x, y: item.y, record_id: item.record_id }));
     setCoordinates(coordinates);
   };
 

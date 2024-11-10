@@ -13,7 +13,7 @@ const ImageWithDots_2 = ({ coordinates }) => {
       {coordinates.map((coord, index) => (
         <a
           key={index}
-          href="/dashboard"
+          href={`/inventory/item/${coord.record_id}`}
           style={{
             position: 'absolute',
             top: coord.y,      
