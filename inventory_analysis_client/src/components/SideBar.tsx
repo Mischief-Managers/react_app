@@ -59,7 +59,7 @@ const Sidebar: any = () => {
               to="/analysis/bmi_model"
               style={{ textDecoration: "none" }}
             >
-              <li>BIM 3D Models</li>
+              <li>BIM Models</li>
             </Link>
           </ul>
         )}

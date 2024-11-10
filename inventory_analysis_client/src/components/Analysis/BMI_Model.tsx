@@ -80,7 +80,7 @@ function BMI_Model() {
       <Sidebar />
 
       <div className="mainBody">
-        <h5>BIM 3D Models</h5>
+        <h5>BIM Models</h5>
 
         <br></br>
         <br></br>

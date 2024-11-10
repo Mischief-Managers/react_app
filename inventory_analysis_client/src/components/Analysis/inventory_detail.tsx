@@ -209,7 +209,7 @@ const InventoryDetail: React.FC = () => {
 
                     <div>
 
-                        <h4 style={{ textAlign: 'left', marginLeft: '40px' }}>BIM Model </h4>
+                        <h4 style={{ textAlign: 'left', marginLeft: '40px' }}> Location of the '{itemData?.equipment_name}' in BIM Model </h4>
 
                         <br></br>
                         <br></br>

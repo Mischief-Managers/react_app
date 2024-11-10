@@ -112,7 +112,7 @@ function Dashboard() {
             />
 
             <Card.Body>
-              <Card.Text style={{ color: "white" }}>BIM 3D Model</Card.Text>
+              <Card.Text style={{ color: "white" }}>BIM Model</Card.Text>
               <Card.Link
                 href="/analysis/bmi_model"
                 style={{
