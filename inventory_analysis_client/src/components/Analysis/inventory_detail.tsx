@@ -42,7 +42,6 @@ const InventoryDetail: React.FC = () => {
 
     const [coordinates, setCoordinates] = useState({ x: 100, y: 200 });
 
-
     useEffect(() => {
         const postData = {
             record_id: record_id,
@@ -50,6 +49,7 @@ const InventoryDetail: React.FC = () => {
 
         const apiUrl = `${flask_api_project_url}/get-specific-record`;
         const apiUrl_2 = `${flask_api_project_url}/get-specific-image`;
+        const redDotUrl = `${flask_api_project_url}/get-image-coordinates`;
 
         axios.post(apiUrl, postData)
             .then((response) => {
@@ -61,11 +61,20 @@ const InventoryDetail: React.FC = () => {
                 setLoading(false);
             });
 
-
         axios.post(apiUrl_2, postData)
             .then((response) => {
                 setLoading(false);
                 setItemImageStr(response.data)
+            })
+            .catch((error) => {
+                setError(error.message);
+                setLoading(false);
+            });
+
+        axios.post(redDotUrl, postData)
+            .then((response) => {
+                setLoading(false);
+                setCoordinates({x: response.data.x, y: response.data.y})
             })
             .catch((error) => {
                 setError(error.message);
@@ -117,12 +126,12 @@ const InventoryDetail: React.FC = () => {
 
                             <tr>
                                 <td>Required Maintenence</td>
-                                <td>{itemData?.maintenance_required === 1 ? 'True' : 'False'}</td>
+                                <td>{itemData?.maintenance_required === 1 ? 'Yes' : 'No'}</td>
                             </tr>
 
                             <tr>
                                 <td>High Priority</td>
-                                <td>{itemData?.high_priority === 1 ? 'True' : 'False'}</td>
+                                <td>{itemData?.high_priority === 1 ? 'Yes' : 'No'}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -210,7 +219,6 @@ const InventoryDetail: React.FC = () => {
                         </div>
 
                     </div>
-
 
                 </div>
             </div>

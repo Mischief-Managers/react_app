@@ -135,8 +135,8 @@ const ListShow: React.FC = () => {
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.date_time.toString()}</Link></td>
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.building}</Link></td>
                   <td><Link to={`/inventory/item/${item.record_id}`}>{item.equipment_name}</Link></td>
-                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.maintenance_required === 1 ? 'True' : 'False'}</Link></td>
-                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.high_priority === 1 ? 'True' : 'False'}</Link></td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.maintenance_required === 1 ? 'Yes' : 'No'}</Link></td>
+                  <td><Link to={`/inventory/item/${item.record_id}`}>{item.high_priority === 1 ? 'Yes' : 'No'}</Link></td>
                   <td></td>
                 </tr>
               ))}
