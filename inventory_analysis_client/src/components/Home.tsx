@@ -18,6 +18,12 @@ function Home() {
         </Link>
       </div>
 
+      <div className="exploreButton2">
+        <Link to="https://4d86-91-194-240-2.ngrok-free.app/">
+          <button className="btn btn-primary">Mobile Application Link</button>
+        </Link>
+      </div>
+
       <p className="hostedBy">
         Hosted By&nbsp;:&nbsp;
         <a href="https://eu.junctionplatform.com/home">Mischief Managers</a>

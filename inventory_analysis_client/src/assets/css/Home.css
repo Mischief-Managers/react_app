@@ -36,10 +36,18 @@
 }
 
 .exploreButton {
-  padding: 4em;
+  padding: 2.5em;
 }
 
 .exploreButton:hover {
+  filter: drop-shadow(0 0 2em #205ed1aa);
+}
+
+.exploreButton2 {
+  padding: 0em;
+}
+
+.exploreButton2:hover {
   filter: drop-shadow(0 0 2em #205ed1aa);
 }
 
